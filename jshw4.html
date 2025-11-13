@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> game result generator for a beginner-level web game</title>
+</head>
+<body>
+    <p> random integer between 1 and 50</p>
+        <p id = "ran"></p>
+        <p id="score"></p>
+        <p id="num"></p>
+        <p id="sub"></p>
+        <p id="sqr"></p>
+        <p id="pie"></p>
+        <p id="mul"></p>
+        <p id="min"></p>
+        <p id="max"></p>
+    <script>
+        let random= document.getElementById("ran").innerHTML =Math.floor(Math.random() * 50) + 1;
+let userScore= '45'
+document.getElementById("score").innerHTML="user input score is"+" "+ userScore;
+let change = Number(userScore)
+document.getElementById("num").innerHTML="converting user score as number"+ " "+ change;
+let diff=Number(random-change)
+document.getElementById("sub").innerHTML="diffrence of mystery level and user score is"+" "+diff;
+document.getElementById("sqr").innerHTML="square root of user score is"+" "+Math.sqrt(change);
+document.getElementById("pie").innerHTML="value of PI is"+" "+ Math.PI;
+let con='20'* 5;
+document.getElementById("mul").innerHTML="implicit conversion is"+" "+ con;
+document.getElementById('min').innerHTML="lowest value is"+" "+Math.min(10,20,random);
+document.getElementById('max').innerHTML="highest value is"+" "+Math.max(10,20,random);
+
+
+        
+    </script>
+    
+</body>
+</html>
