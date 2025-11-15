@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile page for a user on a small website</title>
+</head>
+<body>
+    <button onclick="userInfo()">result</button>
+    <p id="jo"></p>
+    <script>
+        function userInfo()
+        {
+            let user = {
+          name: "jobi",
+          age: 22,
+          admin: true
+         };
+
+        let ageIs = "age" in user;
+        delete user.age;
+
+         let access = (ageIs && user.admin && user.age >= 18)
+        ? "Access Granted" : "Access Denied";
+
+    document.getElementById("jo").innerHTML =
+        "Age exists: " + ageIs + "<br>" +
+        "After delete, age is: " + user.age + "<br>" +
+        access;
+}
+
+        
+    </script>
+</body>
+</html>
