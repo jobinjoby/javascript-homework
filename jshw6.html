@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="jo"></p>
+    <p id="qw"></p>
+    <p id="jj"></p>
+    <p id="pass"></p>
+    <p id="ab"></p>
+    <p id="sort"></p>
+
+    <script>
+        let students = [
+            { name: "virat", score: 72 },
+            { name: "rohit", score: 45 },
+            { name: "sachin", score: 92 },
+            { name: "dhoni", score: 33 },
+            { name: "bumrah", score: 88 }
+        ];
+
+       
+        let names = students.map(s => s.name);
+        document.getElementById("jo").innerHTML = names.join(", ");
+let above60 = students.filter(s => s.score > 60).map(s => s.name);
+        document.getElementById("qw").innerHTML = "Students with more than 60: " + above60;
+
+ 
+        let totalScore = students.reduce((sum, s) => sum + s.score, 0);
+        document.getElementById("jj").innerHTML = "Total score is: " + totalScore;
+
+        let Passed = students.every(s => s.score > 35);
+        document.getElementById("pass").innerHTML = "Did all students pass? : " + Passed;
+
+      
+        let above90 = students.some(s => s.score > 90);
+        document.getElementById("ab").innerHTML = "Any student scored above 90? : " + above90;
+
+        let sortedStudents = students.sort((a, b) => b.score - a.score);
+
+        
+        let sortedText = "Sorted by Score (Descending):<br>";
+        sortedStudents.forEach(s => {
+           sortedText += s.name + " - " + s.score + "<br>";
+
+        });
+
+        document.getElementById("sort").innerHTML = sortedText;
+    </script>
+
+</body>
+</html>
