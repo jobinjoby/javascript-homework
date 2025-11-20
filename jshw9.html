@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment filtering system for a blog site</title>
+</head>
+<body>
+    <p id="jo"> </p> 
+    <p id="as"></p>
+    <p id="fg"></p>
+    <p id="jj"></p>
+    <script>
+      var text = "I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great."
+      var qw = document.getElementById("jo").innerHTML = /(bad|ugly|stupid)/i.test(text)
+      var rep = text.replace (/bad|ugly|stupid/gi,"***")
+      var  cv = document.getElementById("as").innerHTML=rep;
+      var numm = rep.match(/\d/g);
+      var asd =numm ? numm .length:0;
+      document.getElementById("fg").innerHTML="number count is :"+ asd;
+      let capital = rep.match(/\b[A-Z][a-zA-Z]*/g);
+      let res = capital ? capital.length:0;
+      document.getElementById("jj").innerHTML="words with capital letter : "+ res;
+      
+    </script>
+    
+</body>
+</html>
