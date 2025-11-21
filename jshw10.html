@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<p id="jo"></p>
+
+
+<script>
+    try {
+      
+        let feedback = JSON.parse(`
+        {
+            "name": "Jobin J",
+            "email": "jobinjo@gmail.com",
+            "subject": "Website Feedback",
+            "message": "I really like your website. The design is clean and easy to use."
+        }
+        `);
+
+        console.log(feedback);
+
+        let check = (text) => {
+            return /thank/i.test(text);
+        };
+
+        if (check(feedback.message)) {
+            document.getElementById("jo").innerHTML = "Positive feedback received";
+        } else {
+            document.getElementById("jo").innerHTML = "Feedback noted";
+        }
+
+    } catch (error) {
+        document.getElementById("jo").textContent = "Invalid JSON data";
+    }
+</script>
+
+</body>
+</html>
+
