@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic User System</title>
+</head>
+<body>
+    <script>
+        class User {
+            constructor(name, age, email) {
+                this._name = name;
+                this._age = age;
+                this._email = email;
+            }
+
+            get name() {
+                return this._name;
+            }
+
+            get age() {
+                return this._age;
+            }
+
+            setEmail(newEmail) {
+                if (newEmail.includes("@")) {
+                    this._email = newEmail;
+                } else {
+                    console.log("Invalid email address");
+                }
+            }
+
+            getDetails() {
+                return `Name: ${this._name}, Age: ${this._age}, Email: ${this._email}`;
+            }
+        }
+
+        let user1 = new User("jobin", 22, "jobinjo973@gmail.com");
+
+        user1.setEmail("jobin123gmail.com");  
+        user1.setEmail("jobinn122gmail.com");  
+        user1.setEmail("jobinjo973@gmail.com");
+
+        console.log(user1.getDetails());
+    </script>
+</body>
+</html>
